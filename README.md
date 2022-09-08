@@ -1,19 +1,46 @@
 # CD-5IW
 
-Déploiement continue 
+But du projet : Déployer une application sur Microsoft Azure avec Github Actions, Terraform et Ansible
 
 ## Stack technique
 
-### JokeApp : 
+## JokeApp : 
+
+
+### NestJS
 
 ```
-Framework : NestJS
+Framework basé sur Express, en Javascript
 Test : Jest 
-Pipeline CI : Github Actions 
-Déploiement de l'infra : Terraform
-Déploiement de l'application dans le cloud : Ansible 
-Service cloud : Microsoft Azure 
 ```
+
+### Github Actions 
+
+```
+Pipeline CI : Outil d'automatisation des process
+1/Création des instances via Terraform
+2/Lancement de l'API via Ansible
+```
+
+### Terraform
+
+```
+Outil d'orchestration des providers
+Lien utile : https://www.terraform.io
+```
+
+### Ansible 
+
+```
+Déploiement de l'application dans le cloud
+```
+
+### Microsoft Azure 
+
+```
+Service cloud
+```
+
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
