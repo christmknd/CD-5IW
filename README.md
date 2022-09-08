@@ -4,8 +4,6 @@ But du projet : Déployer une application sur Microsoft Azure avec Github Action
 
 ## Stack technique
 
-## JokeApp : 
-
 
 ### NestJS
 
