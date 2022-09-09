@@ -19,16 +19,17 @@
         clone: true
         update: true
 
-    - name: Install
-      become: true
-      command: npm install /home/azureuser/project 
+    - name: Install Dependancies on project 
 
-    - name: Build
-      command: npm run build /home/azureuser/project
-
-    - name: Start the app 
       become: true
-      command: npm start /home/azureuser/project
+      npm: 
+        path: /home/azureuser/project
+
+    - name: Build App
+      shell: npm run build 
+
+    - name: Start App
+      shell: npm start /home/azureuser/project/main.ts
 
 
 
