@@ -25,7 +25,7 @@
       ansible.builtin.apt: 
         pkg:
           - npm
-          - pip3
+          - nodejs
         state: latest
         update_cache: true
 
