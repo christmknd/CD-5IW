@@ -30,7 +30,7 @@
         update_cache: true
 
     - name: Npm Install
-      command: npm install
+      command: cd project && npm install
 
     - name: Start the app 
       become: true
