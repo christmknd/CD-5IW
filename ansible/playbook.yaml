@@ -1,6 +1,30 @@
-- hosts: cd-5iw
-
+--- 
+- hosts: localhost
   tasks:
+    #Installer les dépendances sur le serveur
+    - name: Install dependancies
+      ansible.builtin.apt: 
+        pkg:
+          - node 
+          - npm
+          - pip3
+        state: latest
+        update_cache: true
+
+
+
+    - name: Send the app to the VM 
+      copy:
+        src: /src
+        dest: home/azureuser
+
+    - name: Build and test the app 
+      command : npm run build && npm run test
+
+    - name: Start the app 
+      command: 
+        cmd: npm start 
+
 
     
 
