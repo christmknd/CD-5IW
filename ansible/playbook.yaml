@@ -15,8 +15,9 @@
 
     - name: Send the app to the VM 
       copy:
-        src: /src
+        src: /CD-5IW
         dest: home/azureuser
+        mode: 0644
 
     - name: Build and test the app 
       command : npm run build && npm run test

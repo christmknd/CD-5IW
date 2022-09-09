@@ -39,6 +39,8 @@ jobs:
             playbook: playbook.yml
             directory: /ansible
             key: ${{secrets.SSH_PRIVATE_KEY}} 
+        run: |
+            ansible.playbook ansible/playbook.yml
 
 
     
