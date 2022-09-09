@@ -3,6 +3,7 @@
   tasks:
 
     - name: Update All Packages on VM
+      become: true
       command: apt update
 
     - name: Install dependancies
