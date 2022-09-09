@@ -24,7 +24,6 @@
       become: true
       ansible.builtin.apt: 
         pkg:
-          - node 
           - npm
           - pip3
         state: latest
