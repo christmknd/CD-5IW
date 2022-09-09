@@ -4,16 +4,7 @@
   tasks:
     
     - name: Delete folder if it exists 
-      shell:  if [ -d "/home/azureuser/project" ]; then sudo rm -r /home/azureuser/project; fi
-
-    - name: Install npm
-      become: true
-      ansible.builtin.apt: 
-        name:
-          - npm
-          - nodejs
-        state: latest
-        update_cache: true
+      shell:  if [ -d "/home/azureuser/project" ]; then sudo rm -r /home/azureuser/project; f
 
     - name: Git Clone Repo 
       become: true
