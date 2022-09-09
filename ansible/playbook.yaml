@@ -5,13 +5,14 @@
     - name: Update All Packages on VM
       become: true
       command: apt update
+      state: present
 
     - name: Install dependancies
       become: true
       ansible.builtin.apt: 
         pkg:
           - npm
-          - nodejs 
+          - nodejs=18.0.0
         state: latest
         update_cache: true
 
