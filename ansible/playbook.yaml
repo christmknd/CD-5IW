@@ -2,12 +2,15 @@
 - hosts: azure_vm
   tasks:
 
+    - name: Update All Packages on VM
+      command: apt update
+
     - name: Install dependancies
       become: true
       ansible.builtin.apt: 
         pkg:
           - npm
-          - nodejs
+          - nodejs 
         state: latest
         update_cache: true
 
@@ -26,9 +29,11 @@
         path: /home/azureuser/project
 
     - name: Build App
+      become: true
       shell: npm run build 
 
     - name: Start App
+      become: true
       shell: npm start /home/azureuser/project/main.ts
 
 
