@@ -36,6 +36,12 @@ jobs:
       - name: checkout 
         uses: actions/checkout@v3
 
+      - name: add known hosts
+        uses: kielabokkie/ssh-key-and-known-hosts-action@v1
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+          ssh-host: 52.234.134.61
+
       - name: Run playbook
         uses: dawidd6/action-ansible-playbook@v2
         with:
