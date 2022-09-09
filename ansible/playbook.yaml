@@ -2,11 +2,6 @@
 - hosts: azure_vm
   tasks:
 
-    - name: Update All Packages on VM
-      become: true
-      command: apt update
-      state: present
-
     - name: Install dependancies
       become: true
       ansible.builtin.apt: 
