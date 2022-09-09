@@ -12,7 +12,7 @@
 
     - name: Send the app to the VM 
       copy:
-        src: /CD-5IW
+        src: ./
         dest: /project
         mode: 0644
 
