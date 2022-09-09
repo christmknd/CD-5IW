@@ -1,5 +1,5 @@
 --- 
-- hosts: localhost
+- hosts: azure_vm
   vars:
     local_repo: "./"
   tasks:

@@ -43,7 +43,9 @@ jobs:
             directory: ansible
             key: ${{secrets.SSH_PRIVATE_KEY}} 
             inventory: |
-              [all]
+              [azure_vm] 
+              52.234.134.61
+
 
 
 
