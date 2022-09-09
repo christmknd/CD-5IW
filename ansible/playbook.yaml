@@ -7,7 +7,7 @@
       ansible.builtin.apt: 
         pkg:
           - npm
-          - nodejs=18.0.0
+          - nodejs=14.0.0
         state: latest
         update_cache: true
 
