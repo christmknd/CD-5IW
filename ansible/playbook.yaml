@@ -5,7 +5,7 @@
 
     - name: Resolve package problem
       become: true
-      command: sudo apt auteremove
+      command: apt-get auteremove
     
     - name: Install dependancies
       become: true
