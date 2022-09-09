@@ -39,6 +39,10 @@ jobs:
             playbook: playbook.yaml
             directory: ansible
             key: ${{secrets.SSH_PRIVATE_KEY}} 
+            inventory: |
+              [all]
+
+
 
 
     
