@@ -1,7 +1,7 @@
 --- 
 - hosts: azure_vm
   vars:
-    local_repo: "./"
+    local_repo: "/src"
   tasks:
 
     - name: Create project directory in VM
