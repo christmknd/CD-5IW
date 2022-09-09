@@ -2,14 +2,6 @@
 - hosts: azure_vm
   tasks:
 
-    - name: Git Clone Repo 
-      become: true
-      ansible.builtin.git:
-        repo: https://github.com/christmknd/CD-5IW.git
-        dest: /home/azureuser/project
-        clone: true
-        update: true
-
     - name: Install dependancies
       become: true
       ansible.builtin.apt: 
@@ -19,12 +11,20 @@
         state: latest
         update_cache: true
 
+    - name: Git Clone Repo 
+      become: true
+      ansible.builtin.git:
+        repo: https://github.com/christmknd/CD-5IW.git
+        dest: /home/azureuser/project
+        clone: true
+        update: true
+
     - name: Install
       become: true
       command: npm install 
 
     - name: Build
-      command: cd /project && npm run build 
+      command: npm run build 
 
     - name: Start the app 
       become: true
