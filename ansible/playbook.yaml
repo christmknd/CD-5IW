@@ -21,14 +21,14 @@
 
     - name: Install
       become: true
-      command: npm install 
+      command: npm install /home/azureuser/project 
 
     - name: Build
-      command: npm run build 
+      command: npm run build /home/azureuser/project
 
     - name: Start the app 
       become: true
-      command: npm start
+      command: npm start /home/azureuser/project
 
 
 
