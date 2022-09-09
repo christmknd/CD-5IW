@@ -1,5 +1,7 @@
 --- 
 - hosts: localhost
+  vars:
+    local_repo: "./"
   tasks:
 
     - name: Create project directory in VM
@@ -12,7 +14,7 @@
 
     - name: Send the app to the VM 
       copy:
-        src: /src
+        src: {{ local_repo }}
         dest: /project
         mode: 0644
 
@@ -26,11 +28,9 @@
         state: latest
         update_cache: true
 
-    - name: Build and test the app 
-      command : npm run build && npm run test
-
     - name: Start the app 
-      command: npm start 
+      command: npm start
+
 
 
     
