@@ -31,7 +31,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: checkout 
-        uses: actions/checkout@v
+        uses: actions/checkout@v3
 
       - name: Run playbook
         uses: dawidd6/action-ansible-playbook@v2
