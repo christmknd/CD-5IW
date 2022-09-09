@@ -2,14 +2,7 @@
 - hosts: azure_vm
 
   tasks:
-    
-    - name: Install dependancies
-      become: true
-      ansible.builtin.apt: 
-        name:
-          - npm
-        state: latest
-        update_cache: true
+  
 
     - name: Delete folder if it exists 
       shell:  if [ -d "/home/azureuser/project" ]; then sudo rm -r /home/azureuser/project; fi
