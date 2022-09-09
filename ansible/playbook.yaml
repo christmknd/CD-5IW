@@ -2,6 +2,10 @@
 - hosts: azure_vm
 
   tasks:
+
+    - name: Resolve package problem
+      become: true
+      command: sudo apt auteremove
     
     - name: Install dependancies
       become: true
