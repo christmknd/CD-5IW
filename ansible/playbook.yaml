@@ -2,14 +2,6 @@
 - hosts: azure_vm
 
   tasks:
-    
-    - name: Install dependancies
-      become: true
-      ansible.builtin.apt: 
-        name:
-          - npm
-        state: latest
-        update_cache: true
 
     - name: Git Clone Repo 
       become: true
