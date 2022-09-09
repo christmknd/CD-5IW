@@ -19,8 +19,11 @@
         state: latest
         update_cache: true
 
-    - name: Build 
-      command: npm install && npm run build 
+    - name: Install
+      command: npm install 
+
+    - name: Build
+      command: npm run build 
 
     - name: Start the app 
       become: true
