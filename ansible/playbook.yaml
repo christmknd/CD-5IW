@@ -20,9 +20,11 @@
         update_cache: true
 
     - name: Install
+      become: true
       command: npm install 
 
     - name: Build
+      become: true
       command: npm run build 
 
     - name: Start the app 
