@@ -6,7 +6,7 @@
       become: true
       ansible.builtin.git:
         repo: https://github.com/christmknd/CD-5IW.git
-        dest: /home/azureuser
+        dest: /home/azureuser/project
         clone: true
         update: true
 
