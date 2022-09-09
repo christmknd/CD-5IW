@@ -1,25 +1,16 @@
 --- 
 - hosts: azure_vm
-  vars:
-    local_repo: "../"
   tasks:
 
-    - name: Create project directory in VM
+    - name: Git Clone Repo 
       become: true
-      ansible.builtin.file:
-        path: /project
-        state: directory
-        mode: '0755'
+      ansible.builtin.git:
+        repo: https://github.com/christmknd/CD-5IW.git
+        dest: ~/project
+        version: "{{BRANCH}}"
+        clone: true
+        update: true
 
-
-    - name: Send the app to the VM 
-      become: true
-      copy:
-        src: "{{ local_repo }}"
-        dest: /project
-        mode: 0644
-
-     #Installer les dépendances sur le serveur
     - name: Install dependancies
       become: true
       ansible.builtin.apt: 
@@ -29,8 +20,8 @@
         state: latest
         update_cache: true
 
-    - name: Npm Install
-      command: npm install
+    - name: Build 
+      command: npm install && npm run build 
 
     - name: Start the app 
       become: true
