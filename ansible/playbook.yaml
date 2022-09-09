@@ -2,12 +2,18 @@
 - hosts: azure_vm
   tasks:
 
+    - name: Update 
+      apt: 
+      update_cache: true 
+      cache_valid_time: 3000
+      force_apt_get: true 
+
     - name: Install dependancies
       become: true
       ansible.builtin.apt: 
         pkg:
           - npm
-          - nodejs=14.0.0
+          - nodejs
         state: latest
         update_cache: true
 
