@@ -36,7 +36,7 @@ jobs:
       - name: Run playbook
         uses: dawidd6/action-ansible-playbook@v2
         with:
-            playbook: playbook.yml
+            playbook: playbook.yaml
             directory: /ansible
             key: ${{secrets.SSH_PRIVATE_KEY}} 
 

@@ -1,7 +1,22 @@
 --- 
 - hosts: localhost
   tasks:
-    #Installer les dépendances sur le serveur
+
+    - name: Create project directory if it does not exist
+      become: true
+      ansible.builtin.file:
+        path: /project
+        state: directory
+        mode: '0755'
+
+
+    - name: Send the app to the VM 
+      copy:
+        src: /CD-5IW
+        dest: /project
+        mode: 0644
+
+     #Installer les dépendances sur le serveur
     - name: Install dependancies
       ansible.builtin.apt: 
         pkg:
@@ -10,14 +25,6 @@
           - pip3
         state: latest
         update_cache: true
-
-
-
-    - name: Send the app to the VM 
-      copy:
-        src: /CD-5IW
-        dest: home/azureuser
-        mode: 0644
 
     - name: Build and test the app 
       command : npm run build && npm run test
