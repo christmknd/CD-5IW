@@ -13,6 +13,7 @@
 
 
     - name: Send the app to the VM 
+      become: true
       copy:
         src: "{{ local_repo }}"
         dest: /project
