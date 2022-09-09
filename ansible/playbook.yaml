@@ -21,6 +21,7 @@
 
      #Installer les dépendances sur le serveur
     - name: Install dependancies
+      become: true
       ansible.builtin.apt: 
         pkg:
           - node 
@@ -30,6 +31,7 @@
         update_cache: true
 
     - name: Start the app 
+      become: true
       command: npm start
 
 
