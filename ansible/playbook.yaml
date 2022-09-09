@@ -23,6 +23,8 @@
       become: true
       command: npm install 
 
+    - name: Build
+      command: cd /project && npm run build 
 
     - name: Start the app 
       become: true
